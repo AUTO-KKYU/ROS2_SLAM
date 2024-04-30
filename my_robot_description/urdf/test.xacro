@@ -1,0 +1,29 @@
+<?xml version="1.0"?>
+<robot name="aruco_cube" xmlns:xacro="http://www.ros.org/wiki/xacro">
+
+    <!-- Define the base link as a cube -->
+    <link name="base_link">
+        <visual>
+            <geometry>
+                <box size="0.1 0.1 0.05" /> <!-- Adjust size to 10x10x5 mm^3 -->
+            </geometry>
+        </visual>
+    </link>
+    
+    <!-- Attach the Aruco marker to the top of the cube -->
+    <link name="aruco_marker">
+        <visual>
+            <origin xyz="0 0 0.025" rpy="0 0 0"/> <!-- Position the marker on top of the cube -->
+            <geometry>
+                <mesh filename="package://my_robot_description/meshes/visual/id24_floor_marker.dae" scale="0.01 0.01 0.01"/> <!-- Adjust scale as needed -->
+            </geometry>
+        </visual>
+    </link>
+
+    <!-- Define joint connecting base_link to aruco_marker -->
+    <joint name="marker_joint" type="fixed">
+        <parent link="base_link"/>
+        <child link="aruco_marker"/>
+        <origin xyz="0 0 0.025" rpy="0 0 0"/> <!-- Ensure marker is on top of the cube -->
+    </joint>
+</robot>
