@@ -28,6 +28,7 @@ setup(
             'navigate_robot = my_robot_test.navigate_robot:main',
             'emergency_bracking = my_robot_test.emergency_bracking:main',
             'collision_avoidance = my_robot_test.collision_avoidance:main',
+            'obstacle_avoidance = my_robot_test.obstacle_avoidance:main',
         ],
     },
 )
