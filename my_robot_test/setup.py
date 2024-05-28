@@ -26,6 +26,7 @@ setup(
     entry_points={
         'console_scripts': [
             'navigate_robot = my_robot_test.navigate_robot:main',
+            'emergency_bracking = my_robot_test.emergency_bracking:main',
         ],
     },
 )
